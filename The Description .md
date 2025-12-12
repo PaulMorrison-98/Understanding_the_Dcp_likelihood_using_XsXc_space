@@ -1,5 +1,5 @@
 
-<img width="1354" height="557" alt="Screenshot_select-area_20251208203819" src="https://github.com/user-attachments/assets/a74bf537-cf94-45b0-b7ca-48b197936ba2" />
+<img width="1354" height="557" alt="Screenshot_select-area_20251208203819" src="./media/Cover_photo.png" />
 
 
 # Walking in circles in a complex valley: Understanding $\delta_{cp}$ sensitivity using $Xs-Xc$ space

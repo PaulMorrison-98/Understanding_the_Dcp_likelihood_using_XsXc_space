@@ -7,14 +7,14 @@ The purpose of this description is to help develop an intuition for how fits per
 
 ## The problem
 In typical analyses, experiments have sufficiently large statistics and perform fits within a regular parameter space, so the likelihood function approaches a well-known asymptotic distribution (usually Gaussian), whose width is determined by the experimental sensitivity and the degree to which the data model is understood. The actual fit then simply selects the best-fit value, while the overall likelihood shape remains independent of the particular value preferred by the data:
-<img width="1573" height="472" alt="Typical png" src="https://github.com/user-attachments/assets/4e450262-8a5b-4336-8e7b-87715a462dc5" />
+<img width="1573" height="472" alt="Typical png" src="./media/Typical_example.png" />
 In neutrino oscillation experiments, the statistics for appearance events are typically very small. At these low event counts, the standard PMNS parametrisation exhibits irregularities that violate key assumptions required for the Gaussian approximation.
 
 ### Measuring  $\delta_{cp}$
 Sensitivity to $\delta_{cp}$ is generated from distinct terms in the oscillation probability. Notably, we have CP-conserving (CPc) terms like $\cos\delta_{cp}$ and $\cos 2\delta_{cp}$, and a CP-violating (CPv) term $\sin\delta_{cp}$ (we can safely ignore $\cos 2\delta_{cp}$, as the contribution of this higher-order Fourier mode is negligible).
 
 The sensitivity to the CPv term comes from comparing the $\nu_e$ and $\bar\nu_e$ samples, while sensitivity to the CPc term comes from the neutrino spectrum shape. Because these two pieces of information arise from different aspects of the fit, their individual contributions to the overall sensitivity to $\delta{cp}$ differ: the CPv term provides the dominant constraint, while the CPc term contributes subdominantly. As a result, the rate at which the predicted spectrum changes with $\delta_{cp}$, and thus the overall sensitivity, depends strongly on the true value of $\delta_{cp}$. When this intrinsic dependence is combined with additional effects such as marginalisation biases, physical boundaries (e.g. the upper limit on the appearance probability), and degeneracies inherent in the standard parametrisation, the shape of the likelihood function becomes highly sensitive to the true $\delta_{cp}$ value and can be very unintuitive. For instance, consider these two Asimov fits from T2K that assume trial p\Foints $\delta_{cp}=0$ and $\delta_{cp}=-\pi/2$, respectively:
-<img width="1910" height="661" alt="AsimovA_AsimovB" src="https://github.com/user-attachments/assets/f020ff7f-c2d2-4dcc-8926-1cd94c594f96" />
+<img width="1910" height="661" alt="AsimovA_AsimovB" src="./media/AsimovA_AsimovB.png" />
 
 I will not elaborate on this further here, but this behaviour complicates sensitivity studies and the characterization of certain systematic uncertainties that rely on understanding how the likelihood function changes. This remains a significant bottleneck in many neutrino oscillation analyses.
 
@@ -52,7 +52,7 @@ In this extended parameterisation, the physical subspace corresponds to the poin
 
 In this parameterisation, the likelihood is Gaussian, with its width independent of the true value of the parameter (up to the trivial and well-understood scaling that comes from the Poisson variance–mean relationship). Changing the assumed trial point therefore only shifts the centre of the best-fit point. The figure below shows the $2\sigma$ contour of the fit assuming different true $\delta_{cp}$ points, where the black unit circle defines the physical subspace:
 
-<img width="876" height="998" alt="Screenshot_select-area_20251119004647" src="https://github.com/user-attachments/assets/c36f32d2-db5b-4eb6-affd-89b8fed95142" />
+<img width="876" height="998" alt="Screenshot_select-area_20251119004647" src="./media/multi_fit.png" />
 
 ``` [NOTE] this assumes that this Gaussian approximation remains accurate across the entire unit circle, which may not be true. This can limit the validity of this approach below a certain confidence threshold. However, this typically coincides with the level at which the experiment ceases to make meaningful statements anyway. ```
 
@@ -65,13 +65,13 @@ Even in an idealised scenario where the experiment had equal sensitivity to the 
 
 It is therefore straightforward to build intuition for both the origin of the 1D $\delta_{cp}$ likelihood shape and for why a trial-point dependence arises. Here we illustrate this using several animations and simple Python tools (all provided so you can can play with). In this extended parameter space, the fit yields a paraboloid, and the 1D $\delta_{cp}$ likelihood emerges from how the unitarity circle defined by $X_s^2 + X_c^2 = 1$ maps onto this surface. This mapping can be visualised by tracing around the circle. For the animations, one can imagine applying a circular “cookie-cutter’’ to the paraboloid and examining the resulting trace in the $\chi^2$ direction.
 
-![General_example](https://github.com/user-attachments/assets/30347c35-e88a-457c-9399-a68bc4a97983)
+![General_example](./media/General_example.gif)
 
 ## Physical circle sits away from the valley ($|Xs|>1$)
 
 The simplest case is when the physical subspace is away from the valley ($Xs > 1$ or $Xs < -1$). In this scenario, the circle sits on the steep $X_s$ walls of the paraboloid, and the one-dimensional $\delta_{cp}$ likelihood has a single maximum and a single minimum:
 
-![On_Valley_wall_example](https://github.com/user-attachments/assets/153fbfc4-8e34-4cd2-8f9c-456fbd12859d)
+![On_Valley_wall_example](./media/1.gif)
 
 The larger the absolute value of $Xs$, the higher up the wall the physical circle will appear, the steeper the gradient will be, and the more extreme the difference between the minimum and the maximum will be.
 

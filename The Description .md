@@ -133,6 +133,7 @@ It is possible for there to be a correlation between Xs and Xc in some experimen
 ## Interactive tool
 I hope this has highlighted the utility of the Xs–Xc approach, and how it allows one to obtain the Xs and Xc sensitivities from a single fit that produces a paraboloid log-likelihood. It also provides an intuitive way to understand what the corresponding one-dimensional $\delta_{cp}$ log-likelihood will look like by simply moving the best-fit point relative to the physical circle. I have also included an interactive Python tool that allows you to set the shape of the Xs–Xc log-likelihood surface and then move the circle around on it, showing in real time the corresponding $\delta_{cp}$ log-likelihood (code here: https://github.com/PaulMorrison-98/Understanding_the_Dcp_likelihood_using_XsXc_space/blob/main/Interactive_tool.py). Because the script works by moving the circle rather than the paraboloid, the values are not marked to avoid confusion.
 
-https://github.com/PaulMorrison-98/Understanding_the_Dcp_likelihood_using_XsXc_space/blob/main/media/interactive_1.mp4
-https://github.com/PaulMorrison-98/Understanding_the_Dcp_likelihood_using_XsXc_space/blob/main/media/interactive_2.mp4
-
+<video controls width="800">
+  <source src="./media/interactive_1.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>

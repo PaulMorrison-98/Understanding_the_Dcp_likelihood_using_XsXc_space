@@ -75,31 +75,31 @@ The simplest case is when the physical subspace is away from the valley ($Xs > 1
 
 The larger the absolute value of $Xs$, the higher up the wall the physical circle will appear, the steeper the gradient will be, and the more extreme the difference between the minimum and the maximum will be.
 
-![on_wall_extreme](https://github.com/user-attachments/assets/862532f6-8435-47af-af53-f6a10c6a9174)
+![on_wall_extreme](./media/2.gif)
 
 As a special case, if the best-fit point lies exactly at $X_s = 1$ or $X_s = -1$ (corresponding to $\delta_{cp} = \pi/2$ or $\delta_{cp} = -\pi/2$, respectively), the minimum will sit in the valley, and the log-likelihood function in this region will be extremely flat.
 
-![On_wall_flat](https://github.com/user-attachments/assets/b0f285f9-1253-42f2-b706-695f278ae6fa)
+![On_wall_flat](./media/3.gif)
 
 ## Physical circle sits in the valley ($|Xs|<1$)
 
 If $|X_s| < 1$, then the physical circle sits across the valley of the paraboloid, and the one-dimensional $\delta_{cp}$ likelihood function will have multiple maxima and minima. Again, the framework makes these features easy to understand.
 
-![In_valley](https://github.com/user-attachments/assets/a682b3c2-db4e-4944-a50e-13b14ec932f0)
+![In_valley](./media/4.gif)
 
 Notice the saddle shape that the physical circle cuts out in this case. The two maxima correspond to the locations of the highest points on the steep $Xs$ walls, while the three minima (there are technically only two, as $\pi$ and $-\pi$ represent the same point) correspond to the highest and lowest points on the shallow $Xc$ walls.
 
 
-![Valley_Minimum](https://github.com/user-attachments/assets/818e7017-c2ba-4a87-821a-0ea3f8c348f2)
+![Valley_Minimum](./media/5.gif)
 
-![output](https://github.com/user-attachments/assets/84c4e7ad-5c18-46d8-b06d-779ecce5800d)
+![output](./media/6.gif)
 
 
 The $X_s$ best fit determines the relative heights of the two maxima in this case, with the next two animations generated using the same $X_c$ value but different $X_s$ values.
 
-![Min_Max_1](https://github.com/user-attachments/assets/cacf4f1f-ac86-4c67-9c32-4b66ea092c6d)
+![Min_Max_1](./media/7.gif)
 
-![Min_Max_2](https://github.com/user-attachments/assets/04f33a6a-7337-439b-b23a-cdf5ebbbe045)
+![Min_Max_2](./media/8.gif)
 
 ## Changing Xc
 
@@ -107,28 +107,28 @@ As the dominant constraint on $\delta_{cp}$, the major features of the one-dimen
 
 If we again consider the $Xs = 1$ or $Xs = -1$ scenario, but this time with $Xc$ far off the physicsal circle.
 
-![On_wall_flat_Xc=6](https://github.com/user-attachments/assets/292f96aa-bb8d-4f8b-b661-5d35da089ac2)
+![On_wall_flat_Xc=6](./media/9.gif)
 
-![On_wall_flat_Xc=n6](https://github.com/user-attachments/assets/2b29db8b-5a4c-4e28-aabd-cfeb82d2822e)
+![On_wall_flat_Xc=n6](./media/10.gif)
 
 Here we see that the likelihood values for the CPc solutions are no longer equal, as one occupies a steeper part of the valley. Also note how the flat section is now skewed/tilted in the direction of whichever CPc solution is favoured.
 
 If we again consider the $|Xs| < 1$ case (so that the physical circle lies across the valley), the value of $Xc$ changes the minima:
 
-![Valley_Xc=n6](https://github.com/user-attachments/assets/1e84fc08-58b4-4dd2-9e03-9d7f7d580a51)
+![Valley_Xc=n6](./media/11.gif)
 
-![Valley_Xc=6](https://github.com/user-attachments/assets/16b0e5ea-8b82-45f9-aa20-61f2eae6f379)
+![Valley_Xc=6](./media/12.gif)
 
 And we can also show this with an $Xs$ offset too.
 
-![output_test_2bands](https://github.com/user-attachments/assets/936e4ce9-6ad4-49ff-919c-9576171659e3)
+![output_test_2bands](./media/13.gif)
 
-![Xc_Xs_offset](https://github.com/user-attachments/assets/0fa8657c-009b-4712-a6b2-bec8d853d722)
+![Xc_Xs_offset](./media/14.gif)
 
 ## Xs-Xc Correlation 
 It is possible for there to be a correlation between Xs and Xc in some experiments. The effect of this is to rotate the direction of the “valley base,” and therefore the direction in which it partitions the physical circle. In the case of no correlation, the valley is oriented perpendicular to the direction of the CPv solutions; rotations introduced by Xs–Xc correlation alter this perpendicular direction. Consequently, the previously discussed features are exactly the same, but they now occur at a different phase.
 
-<img width="1720" height="830" alt="Screenshot_select-area_20251209005142" src="https://github.com/user-attachments/assets/f3a64c9d-f886-411b-a474-01b547afd7a1" />
+<img width="1720" height="830" alt="Screenshot_select-area_20251209005142" src="./media/correlation.png" />
 
 ## Interactive tool
 I hope this has highlighted the utility of the Xs–Xc approach, and how it allows one to obtain the Xs and Xc sensitivities from a single fit that produces a paraboloid log-likelihood. It also provides an intuitive way to understand what the corresponding one-dimensional $\delta_{cp}$ log-likelihood will look like by simply moving the best-fit point relative to the physical circle. I have also included an interactive Python tool that allows you to set the shape of the Xs–Xc log-likelihood surface and then move the circle around on it, showing in real time the corresponding $\delta_{cp}$ log-likelihood (code here: https://github.com/PaulMorrison-98/Understanding_the_Dcp_likelihood_using_XsXc_space/blob/main/Interactive_tool.py). Because the script works by moving the circle rather than the paraboloid, the values are not marked to avoid confusion.

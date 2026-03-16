@@ -3,20 +3,22 @@
 
 
 # Walking in circles in a complex valley: Understanding $\delta_{cp}$ sensitivity using $Xs-Xc$ space
-The purpose of this description is to help develop an intuition for how fits performed in the extended $Xs-Xc$ space translate to the shape of the  $\delta_{cp}$ log-likelihood function.
+The purpose of this description is to help develop an intuition for how fits performed in the extended $Xs-Xc$ space translate to the shape of the $\delta_{cp}$ log-likelihood function.
 
 ## The problem
-In typical analyses, experiments have sufficiently large statistics and perform fits within a regular parameter space, so the likelihood function approaches a well-known asymptotic distribution (usually Gaussian), whose width is determined by the experimental sensitivity and the degree to which the data model is understood. The actual fit then simply selects the best-fit value, while the overall likelihood shape remains independent of the particular value preferred by the data:
+In typical analyses, experiments have sufficiently large statistics and perform fits within a regular parameter space, so the likelihood function approaches a well-known asymptotic distribution (usually Gaussian) whose width is determined by the experimental sensitivity and by how well the data model is understood. The fit simply selects the location of the centre (best fit value), and the overall likelihood shape remains independent of which particular value the data prefer:
 <img width="1573" height="472" alt="Typical png" src="./media/Typical_example.png" />
-In neutrino oscillation experiments, the statistics for appearance events are typically very small. At these low event counts, the standard PMNS parametrisation exhibits irregularities that violate key assumptions required for the Gaussian approximation.
+In neutrino oscillation experiments, however, the statistics for appearance events are typically very small. At these levels, the standard PMNS parametrisation exhibits irregularities that violate the key assumptions required for the Gaussian approximation.
 
 ### Measuring  $\delta_{cp}$
-Sensitivity to $\delta_{cp}$ is generated from distinct terms in the oscillation probability. Notably, we have CP-conserving (CPc) terms like $\cos\delta_{cp}$ and $\cos 2\delta_{cp}$, and a CP-violating (CPv) term $\sin\delta_{cp}$ (we can safely ignore $\cos 2\delta_{cp}$, as the contribution of this higher-order Fourier mode is negligible).
+Sensitivity to $\delta_{cp}$ arises from distinct terms in the oscillation probability. There are CP-conserving (CPc) terms such as $\cos\delta_{cp}$ and $\cos 2\delta_{cp}$, and a CP-violating (CPv) term $\sin\delta_{cp}$. The higher-order $\cos 2\delta_{cp}$ mode contributes negligibly and can be safely ignored.
 
-The sensitivity to the CPv term comes from comparing the $\nu_e$ and $\bar\nu_e$ samples, while sensitivity to the CPc term comes from the neutrino spectrum shape. Because these two pieces of information arise from different aspects of the fit, their individual contributions to the overall sensitivity to $\delta{cp}$ differ: the CPv term provides the dominant constraint, while the CPc term contributes subdominantly. As a result, the rate at which the predicted spectrum changes with $\delta_{cp}$, and thus the overall sensitivity, depends strongly on the true value of $\delta_{cp}$. When this intrinsic dependence is combined with additional effects such as marginalisation biases, physical boundaries (e.g. the upper limit on the appearance probability), and degeneracies inherent in the standard parametrisation, the shape of the likelihood function becomes highly sensitive to the true $\delta_{cp}$ value and can be very unintuitive. For instance, consider these two Asimov fits from T2K that assume trial p\Foints $\delta_{cp}=0$ and $\delta_{cp}=-\pi/2$, respectively:
+The sensitivity to the CPv term comes from comparing the $\nu_e$ and $\bar\nu_e$ samples, while sensitivity to the CPc term comes from the neutrino spectrum shape. Because these two pieces of information arise from different aspects of the fit, their individual contributions to the overall sensitivity to $\delta_{cp}$ differ: the CPv term provides the dominant constraint, while the CPc term contributes subdominantly. As a result, the rate at which the predicted spectrum changes with $\delta_{cp}$ — and thus the overall sensitivity — depends strongly on the true value of $\delta_{cp}$.
+
+When this intrinsic dependence is combined with additional effects such as marginalisation biases, physical boundaries (e.g. the upper limit on the appearance probability), and degeneracies inherent in the standard parametrisation, the shape of the likelihood function becomes highly sensitive to the assumed true $\delta_{cp}$ and can be deeply counterintuitive. Consider, for example, these two Asimov fits from T2K assuming trial points at $\delta_{cp} = 0$ and $\delta_{cp} = -\pi/2$, respectively:
 <img width="1910" height="661" alt="AsimovA_AsimovB" src="./media/AsimovA_AsimovB.png" />
 
-I will not elaborate on this further here, but this behaviour complicates sensitivity studies and the characterization of certain systematic uncertainties that rely on understanding how the likelihood function changes. This remains a significant bottleneck in many neutrino oscillation analyses.
+This behaviour significantly complicates sensitivity studies and the characterisation of certain systematic uncertainties. In particular, since the effect of a systematic depends on the region of parameter space preferred by the data, making universally valid statements about its impact becomes very challenging. This remains a significant bottleneck in many neutrino oscillation analyses.
 
 ## Idea
 The strategy employed in this framework is to construct an extended parameter space in which the physical subspace is embedded, while ensuring that the predicted event rates depend linearly on the extended parameters. Specifically, in the case of $\delta_{cp}$, it can be shown that the oscillation probability is linear in $sin\delta_{cp}$
@@ -38,7 +40,7 @@ $$
 (X_s, X_c) \in \mathbb{R}^2.
 $$
 
-and the extended probability is:
+The oscillation probability in the extended parametrisation then becomes:
 
 $$
 \begin{aligned}
@@ -50,24 +52,24 @@ $$
 
 In this extended parameterisation, the physical subspace corresponds to the points satisfying $f(X_s, X_c) = X_s^2 + X_c^2 = 1$ (**the unit circle**).
 
-In this parameterisation, the likelihood is Gaussian, with its width independent of the true value of the parameter (up to the trivial and well-understood scaling that comes from the Poisson variance–mean relationship). Changing the assumed trial point therefore only shifts the centre of the best-fit point. The figure below shows the $2\sigma$ contour of the fit assuming different true $\delta_{cp}$ points, where the black unit circle defines the physical subspace:
+In this parametrisation, the likelihood is Gaussian, with a width that is independent of the true parameter value (up to the trivial and well-understood scaling from the Poisson variance–mean relationship). Changing the assumed trial point therefore merely shifts the centre of the best-fit paraboloid. The figure below shows the $2\sigma$ contour from fits assuming different true $\delta_{cp}$ values, with the unit circle (the physical subspace) shown in black:
 
 <img width="876" height="998" alt="Screenshot_select-area_20251119004647" src="./media/multi_fit.png" />
 
 ``` [NOTE] this assumes that this Gaussian approximation remains accurate across the entire unit circle, which may not be true. This can limit the validity of this approach below a certain confidence threshold. However, this typically coincides with the level at which the experiment ceases to make meaningful statements anyway. ```
 
 ## Developing Intuition 
-The remainder of this description is dedicated to demonstrating how the corresponding one-dimensional $\delta_{cp}$ log-likelihood can be readily understood by simply shifting the centre of the Gaussian from the $Xs-Xc$ fit and considering how it interacts with the physical circle.
+The remainder of this description is dedicated to demonstrating how the corresponding one-dimensional $\delta_{cp}$ log-likelihood can be readily understood by simply shifting the centre of the Gaussian from the $Xs-Xc$ fit and considering how the physical circle maps onto the surface.
 
-Because the sensitivity to the CPv term ($Xs$ in this parameterisation) is much greater than the sensitivity to the CPc term ($Xc$), the resulting paraboloid in the extended space has a valley-like structure: the $Xs$ direction is steeply constrained, while the $Xc$ direction forms a much shallower slope. Since assuming a different best-fit trial point merely shifts the centre of this paraboloid around the circle, the trajectory traced on the likelihood surface changes accordingly.
+Because the sensitivity to the CPv term ($Xs$ in this parameterisation) is much greater than the sensitivity to the CPc term ($Xc$), the resulting paraboloid in the extended space has a valley-like structure: the $Xs$ direction is steeply constrained, while the $Xc$ direction forms a much shallower slope. Since assuming a different best-fit trial point merely shifts the centre of this paraboloid around, the trajectory traced on the likelihood surface changes accordingly.
 
-Even in an idealised scenario where the experiment had equal sensitivity to the CPv and CPc terms, fit biases would still modify the effective shape. For example, marginalisation can pull the best-fit point away from the true values because the parameters of interest are strongly correlated with those being marginalised over. These effects alter how degeneracies and physical boundaries manifest for different true $\delta_{cp}$ values.
+Even in an idealised experiment with equal sensitivity to both terms, fit biases would still modify the effective shape. For example, marginalisation can pull the best-fit point away from the true values when the parameters of interest are strongly correlated with those being integrated over. These effects alter how degeneracies and physical boundaries manifest for different true $\delta_{cp}$ values.
 
 It is therefore straightforward to build intuition for both the origin of the 1D $\delta_{cp}$ likelihood shape and for why a trial-point dependence arises. Here we illustrate this using several animations and simple Python tools (all provided so you can can play with). In this extended parameter space, the fit yields a paraboloid, and the 1D $\delta_{cp}$ likelihood emerges from how the unitarity circle defined by $X_s^2 + X_c^2 = 1$ maps onto this surface. This mapping can be visualised by tracing around the circle. For the animations, one can imagine applying a circular “cookie-cutter’’ to the paraboloid and examining the resulting trace in the $\chi^2$ direction.
 
 ![General_example](./media/General_example.gif)
 
-## Physical circle sits away from the valley ($|Xs|>1$)
+## Case 1: Physical Circle Sits Away From the Valley ($|Xs| > 1$)
 
 The simplest case is when the physical subspace is away from the valley ($Xs > 1$ or $Xs < -1$). In this scenario, the circle sits on the steep $X_s$ walls of the paraboloid, and the one-dimensional $\delta_{cp}$ likelihood has a single maximum and a single minimum:
 
@@ -81,7 +83,7 @@ As a special case, if the best-fit point lies exactly at $X_s = 1$ or $X_s = -1$
 
 ![On_wall_flat](./media/3.gif)
 
-## Physical circle sits in the valley ($|Xs|<1$)
+## Case 2: Physical Circle Sits in the Valley ($|Xs| < 1$)
 
 If $|X_s| < 1$, then the physical circle sits across the valley of the paraboloid, and the one-dimensional $\delta_{cp}$ likelihood function will have multiple maxima and minima. Again, the framework makes these features easy to understand.
 
@@ -95,13 +97,13 @@ Notice the saddle shape that the physical circle cuts out in this case. The two 
 ![output](./media/6.gif)
 
 
-The $X_s$ best fit determines the relative heights of the two maxima in this case, with the next two animations generated using the same $X_c$ value but different $X_s$ values.
+Notice the saddle shape that the physical circle cuts out in this case. The two maxima correspond to the locations of the highest points on the steep $Xs$ walls, while the three minima (there are technically only two, as $\pi$ and $-\pi$ represent the same point) correspond to the highest and lowest points on the shallow $Xc$ walls.
 
 ![Min_Max_1](./media/7.gif)
 
 ![Min_Max_2](./media/8.gif)
 
-## Changing Xc
+## The Role of $Xc$
 
 As the dominant constraint on $\delta_{cp}$, the major features of the one-dimensional $\delta_{cp}$ likelihood are determined by where the physical circle lies on the steep $Xs$ wall. Changing the $Xc$ best-fit location alters which of the CPc solutions (either $\cos(\delta = \pi) = 1$ or $\cos(\delta = 0) = -1$) is preferred, which has the effect of changing which half of the circle lies higher on the shallow $Xc$ walls. This, in turn, introduces a skew in the one-dimensional $\delta_{cp}$ likelihood.
 
@@ -126,12 +128,14 @@ And we can also show this with an $Xs$ offset too.
 ![Xc_Xs_offset](./media/14.gif)
 
 ## Xs-Xc Correlation 
-It is possible for there to be a correlation between Xs and Xc in some experiments. The effect of this is to rotate the direction of the “valley base,” and therefore the direction in which it partitions the physical circle. In the case of no correlation, the valley is oriented perpendicular to the direction of the CPv solutions; rotations introduced by Xs–Xc correlation alter this perpendicular direction. Consequently, the previously discussed features are exactly the same, but they now occur at a different phase.
+In some experiments, $Xs$ and $Xc$ may be correlated. The effect of such a correlation is to **rotate the orientation of the valley**, and therefore the direction in which it partitions the physical circle. In the uncorrelated case, the valley is perpendicular to the axis connecting the two CPv solutions; a correlation rotates this perpendicular direction. All of the features described above remain exactly the same — they simply occur at a shifted phase in $\delta_{cp}$:
 
 <img width="1720" height="830" alt="Screenshot_select-area_20251209005142" src="./media/correlation.png" />
 
 ## Interactive tool
-I hope this has highlighted the utility of the Xs–Xc approach, and how it allows one to obtain the Xs and Xc sensitivities from a single fit that produces a paraboloid log-likelihood. It also provides an intuitive way to understand what the corresponding one-dimensional $\delta_{cp}$ log-likelihood will look like by simply moving the best-fit point relative to the physical circle. I have also included an interactive Python tool that allows you to set the shape of the Xs–Xc log-likelihood surface and then move the circle around on it, showing in real time the corresponding $\delta_{cp}$ log-likelihood (code here: https://github.com/PaulMorrison-98/Understanding_the_Dcp_likelihood_using_XsXc_space/blob/main/Interactive_tool.py). Because the script works by moving the circle rather than the paraboloid, the values are not marked to avoid confusion.
+The $Xs$–$Xc$ approach provides a single fit that produces a paraboloid log-likelihood, from which one can read off both $Xs$ and $Xc$ sensitivities. It also provides an intuitive method for anticipating the shape of the corresponding 1D $\delta_{cp}$ log-likelihood by simply moving the best-fit point relative to the physical circle.
+
+I have also included an interactive Python tool that allows you to set the shape of the $Xs$–$Xc$ log-likelihood surface and move the physical circle across it, displaying the corresponding $\delta_{cp}$ log-likelihood in real time. Note that because the tool moves the circle rather than the paraboloid, numerical axis labels are omitted to avoid confusion:
 
 ![interactive_1](./media/interactive_1.gif)
 ![interactive_2](./media/interactive_2.gif)
